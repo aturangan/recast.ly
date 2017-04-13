@@ -37,9 +37,9 @@ describe('VideoListEntry', function() {
 
   it('should dynamically render a video\'s image', function() {
     var cuteCatVideoImageElement = findRenderedDOMComponentWithClass(cuteCatVideo, 'media-object');
+    console.log(cuteCatVideoImageElement);
     var superCuteCatVideoImageElement = findRenderedDOMComponentWithClass(superCuteCatVideo, 'media-object');
     var hackReactorVideoImageElement = findRenderedDOMComponentWithClass(hackReactorVideo, 'media-object');
-
     expect(cuteCatVideoImageElement.src).to.equal('http://www.fndvisions.org/img/cutecat.jpg');
     expect(superCuteCatVideoImageElement.src).to.equal('https://pbs.twimg.com/profile_images/567285191169687553/7kg_TF4l.jpeg');
     expect(hackReactorVideoImageElement.src).to.equal('https://d3c5s1hmka2e2b.cloudfront.net/uploads/topic/image/14/hack_reactor.png');
