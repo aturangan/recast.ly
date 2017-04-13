@@ -21,7 +21,6 @@ describe('VideoList', function() {
     var videoList = shallowRenderer.getRenderOutput();
     expect(videoList.props.children).to.have.length(1);
 
-    debugger;
     console.log(videoList.props.children);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
   });

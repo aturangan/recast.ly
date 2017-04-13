@@ -1,12 +1,14 @@
-var VideoList = (props) => (
+var VideoList = (props) => {
+  console.log('Video List', props);
+  return (
+    <div className="video-list media">
+      {props.videos.map((item, idx) =>
+        <VideoListEntry clickHandler={props.clickHandler} key={idx} video={item}/>
+      )}
+    </div>
+  );
+};
 
-  <div className="video-list media">
-  console.log(props);
-    {props.children.map(item =>
-      <VideoListEntry item={item}/>
-    )}
-  </div>
-);
 
 //get props from the app 
   //app is the big component 

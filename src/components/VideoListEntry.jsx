@@ -1,27 +1,96 @@
-class VideoListEntry extends React.Component {
+var VideoListEntry = (props) => {
+  return (
+    <div className="video-list-entry">
+      <div className="media-left media-middle">
+        <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
+      </div>
+      <div className="media-body">
+        <div className="video-list-entry-title" onClick={function() { props.clickHandler(props.video)} }>{props.video.snippet.title}</div>
+        <div className="video-list-entry-detail">{props.video.snippet.description}</div>
+      </div>
+    </div>
+  );
+};
 
-  constructor(props) {
-    console.log(props);
-    super();
-    // this.title = props.snippet.title;
-    // this.description = props.snippet.description;
-    // this.url = props;
-  }
-//   render() {
-//   return (
-//     <div className="video-list-entry">
-//       <div className="media-left media-middle">
-//         <img className="media-object" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" alt="" />
-//       </div>
-//       <div className="media-body">
-//         <div className="video-list-entry-title">Video Title</div>
-//         <div className="video-list-entry-detail">Video Description</div>
-//       </div>
-//     </div>
-//   );
+// function clickEvents() {
+//   //change state so that the video that's played in app refers to the new video at the index 
+
+
+
+
+//   console.log('HELLOOO');
 // }
 
-}
+// class VideoListEntry extends React.Component {
+//   constructor(props) {
+//     console.log('props VideoListEntry')
+//     super(props);
+//     this.state = {
+//       isClicked: true
+//     };
+
+//     this.clickEvents = this.clickEvents.bind(this);
+//   }
+
+//   clickEvents() {
+//     this.setState(prevState => ({
+//       clickEvent: !prevState.isClicked
+//     }));
+//   }
+
+//   render() {
+//     return (
+//       <div className="video-list-entry">
+//         <div className="media-left media-middle">
+//           <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
+//         </div>
+//         <div className="media-body">
+//           <div className="video-list-entry-title" onclick={clickEvent()}>{props.video.snippet.title}</div>
+//           <div className="video-list-entry-detail">{props.video.snippet.description}</div>
+//         </div>
+//       </div>
+//       );    
+//   }
+// }
+
+// class Toggle extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {isToggleOn: true};
+
+//     // This binding is necessary to make `this` work in the callback
+//     this.handleClick = this.handleClick.bind(this);
+//   }
+
+//   handleClick() {
+//     this.setState(prevState => ({
+//       isToggleOn: !prevState.isToggleOn
+//     }));
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+// <button onclick="myFunction()">Click me</button>
+
+// <p id="demo"></p>
+
+// <script>
+// function myFunction() {
+//     document.getElementById("demo").innerHTML = "Hello World";
+// }
+// </script>
+
+
+
 
 
 // PropTypes tell other developers what `props` a component expects
